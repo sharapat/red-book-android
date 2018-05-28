@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".details.AnimalDetailActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_toolbar_height">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables"
+            android:layout_margin="@dimen/detail_margin">
+            <ImageView
+                android:id="@+id/detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/todo" />
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detial_name_text_size"
+                android:textColor="@color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/status" />
+            <TextView
+                android:id="@+id/detail_status_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_propagation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/propagation"/>
+            <TextView
+                android:id="@+id/detail_propagation_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_habitat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/habitat"/>
+            <TextView
+                android:id="@+id/detail_habitat_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/quantity"/>
+            <TextView
+                android:id="@+id/detail_quantity_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_lifestyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/lifestyle"/>
+            <TextView
+                android:id="@+id/detail_lifestyle_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_limiting_factories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/limiting_factories"/>
+            <TextView
+                android:id="@+id/detail_limiting_factories_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_increasing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/increasing"/>
+            <TextView
+                android:id="@+id/detail_increasing_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_marginTop="@dimen/detaild_sections_maring_top"
+                android:id="@+id/detail_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black"
+                android:text="@string/security"/>
+            <TextView
+                android:id="@+id/detail_security_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/detail_text_size"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

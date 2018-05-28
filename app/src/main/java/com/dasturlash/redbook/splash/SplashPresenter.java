@@ -48,6 +48,8 @@ public class SplashPresenter {
                 AnimalHolder.getInstance().setBirdsList(models);
                 models = animalDao.getAnimalsByType(MainActivity.MAMMALS);
                 AnimalHolder.getInstance().setMammalsList(models);
+                models = animalDao.getAllAnimals();
+                AnimalHolder.getInstance().setAllAnimals(models);
                 appExecutors.getMainThread().execute(new Runnable() {
                     @Override
                     public void run() {

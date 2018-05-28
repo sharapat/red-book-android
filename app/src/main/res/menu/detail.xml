@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_favourite"
+        android:icon="@drawable/ic_bookmark_border_black_24dp"
+        android:orderInCategory="100"
+        android:title="@string/favorites"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_share_white_24dp"
+        android:orderInCategory="101"
+        android:title="@string/share"
+        app:showAsAction="ifRoom" />
+</menu>

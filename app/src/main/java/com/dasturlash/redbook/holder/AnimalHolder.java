@@ -15,9 +15,9 @@ public class AnimalHolder {
     private List<AnimalDbModel> reptilesList;
     private List<AnimalDbModel> birdsList;
     private List<AnimalDbModel> mammalsList;
+    private List<AnimalDbModel> allAnimals;
 
     private AnimalHolder() {
-
     }
 
     public static AnimalHolder getInstance() {
@@ -65,5 +65,20 @@ public class AnimalHolder {
 
     public void setMammalsList(List<AnimalDbModel> mammalsList) {
         this.mammalsList = mammalsList;
+    }
+
+    public void getAnimalsByType(int type) {
+    }
+
+    public static void setInstance(AnimalHolder instance) {
+        AnimalHolder.instance = instance;
+    }
+
+    public List<AnimalDbModel> getAllAnimals() {
+        return allAnimals;
+    }
+
+    public void setAllAnimals(List<AnimalDbModel> allAnimals) {
+        this.allAnimals = allAnimals;
     }
 }

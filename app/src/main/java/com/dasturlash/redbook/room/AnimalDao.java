@@ -17,6 +17,9 @@ import java.util.List;
 @Dao
 public interface AnimalDao {
 
+    @Query("SELECT * FROM book")
+    List<AnimalDbModel> getAllAnimals();
+
     @Query("SELECT * FROM book WHERE type = :type")
     List<AnimalDbModel> getAnimalsByType(int type);
 

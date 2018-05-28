@@ -29,12 +29,15 @@ public class AnimalsListAdapter extends RecyclerView.Adapter<AnimalsViewHolder> 
     @Override
     public AnimalsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_animals, parent, false);
-        return new AnimalsViewHolder(view);
+        return new AnimalsViewHolder(view, listItemClickListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AnimalsViewHolder holder, int position) {
-        holder.populateModel(models, position, listItemClickListener, view);
+        AnimalDbModel item = models.get(position);
+        if (item != null) {
+            holder.populateModel(item);
+        }
     }
 
     @Override

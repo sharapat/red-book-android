@@ -39,6 +39,9 @@ public class AnimalDbModel {
     @ColumnInfo(name = "lifestyle")
     private String lifestyle;
 
+    @ColumnInfo(name = "limiting")
+    private String limiting;
+
     @ColumnInfo(name = "breeding")
     private String breeding;
 
@@ -47,6 +50,14 @@ public class AnimalDbModel {
 
     @ColumnInfo(name = "favorite")
     private boolean favorite;
+
+    public String getLimiting() {
+        return limiting;
+    }
+
+    public void setLimiting(String limiting) {
+        this.limiting = limiting;
+    }
 
     public boolean isFavorite() {
         return favorite;

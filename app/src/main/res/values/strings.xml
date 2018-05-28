@@ -13,4 +13,13 @@
     <string name="favorites">Танланганлар</string>
     <string name="author">Муаллиф</string>
     <string name="todo">TODO</string>
+    <string name="share">Улашиш</string>
+    <string name="status"><b>Мақоми:</b></string>
+    <string name="propagation"><b>Тарқалиши:</b></string>
+    <string name="habitat"><b>Яшаш жойлари:</b></string>
+    <string name="quantity"><b>Сони:</b></string>
+    <string name="lifestyle"><b>Яшаш тарзи:</b></string>
+    <string name="limiting_factories"><b>Чекловчи омиллар:</b></string>
+    <string name="increasing"><b>Кўпайтириш:</b></string>
+    <string name="security"><b>Муҳофаза чоралари:</b></string>
 </resources>

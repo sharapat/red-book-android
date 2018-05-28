@@ -1,5 +1,6 @@
 package com.dasturlash.redbook.animals;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,8 @@ import com.dasturlash.redbook.MainActivity;
 import com.dasturlash.redbook.R;
 import com.dasturlash.redbook.animals.list.AnimalsListAdapter;
 import com.dasturlash.redbook.animals.list.AnimalsListItemClickListener;
+import com.dasturlash.redbook.details.AnimalDetailActivity;
+import com.dasturlash.redbook.holder.AnimalHolder;
 import com.dasturlash.redbook.models.AnimalDbModel;
 import com.dasturlash.redbook.room.AnimalDatabase;
 
@@ -56,8 +59,10 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
     }
 
     @Override
-    public void onItemClick(int position) {
-
+    public void onItemClick(int id) {
+        Intent intent = new Intent(getActivity(), AnimalDetailActivity.class);
+        intent.putExtra(AnimalDetailActivity.ANIMAL_ID, id);
+        startActivity(intent);
     }
 
     @Override

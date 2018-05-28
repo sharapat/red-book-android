@@ -21,9 +21,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleInstance" />
-
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".details.AnimalDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
