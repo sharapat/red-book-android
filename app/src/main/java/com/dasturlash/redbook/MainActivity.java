@@ -1,6 +1,7 @@
 package com.dasturlash.redbook;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.support.design.widget.NavigationView;
@@ -75,23 +76,21 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.nav_invertebrates) {
-            // Handle the camera action
+            showAnimalsFragment(INVERTEBRATES);
         } else if (id == R.id.nav_fishes) {
-
+            showAnimalsFragment(FISHES);
         } else if (id == R.id.nav_reptiles) {
-
+            showAnimalsFragment(REPTILES);
         } else if (id == R.id.nav_birds) {
-
+            showAnimalsFragment(BIRDS);
         } else if (id == R.id.nav_mammals) {
+            showAnimalsFragment(MAMMALS);
+        } else if (id == R.id.nav_favorites) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_author) {
 
         }
 
@@ -102,5 +101,18 @@ public class MainActivity extends AppCompatActivity
 
     private void changeFragment(Fragment fragment, String tag) {
         getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment, tag).commit();
+    }
+
+    private void showAnimalsFragment(int type) {
+        AnimalsFragment fragment = (AnimalsFragment) getSupportFragmentManager().findFragmentByTag(AnimalsFragment.TAG);
+        if (fragment != null && fragment.isVisible()) {
+            fragment.getData(type);
+        } else {
+            Bundle bundle = new Bundle();
+            bundle.putInt(AnimalsFragment.TYPE_ARGUMENT_KEY, type);
+            assert fragment != null;
+            fragment.setArguments(bundle);
+            changeFragment(fragment, AnimalsFragment.TAG);
+        }
     }
 }

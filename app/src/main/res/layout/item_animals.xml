@@ -18,7 +18,6 @@
         app:layout_constraintLeft_toLeftOf="@+id/item_animals_container"
         app:layout_constraintTop_toTopOf="@+id/item_animals_container"
         app:layout_constraintBottom_toBottomOf="@+id/item_animals_container"
-        android:src="@color/colorPrimary"
         android:contentDescription="@string/todo" />
 
     <TextView

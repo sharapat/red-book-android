@@ -12,9 +12,8 @@ import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 
-
 /**
- * Created by manas on 05.03.18.
+ * Created by QAREKEN on 05.03.18.
  */
 
 public class GsonHelper {

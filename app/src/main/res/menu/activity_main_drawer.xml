@@ -23,10 +23,10 @@
 
     <group android:id="@+id/menu_buttom" android:checkableBehavior="none">
         <item
-            android:id="@+id/nav_share"
+            android:id="@+id/nav_favorites"
             android:title="@string/favorites" />
         <item
-            android:id="@+id/nav_send"
+            android:id="@+id/nav_author"
             android:title="@string/author" />
     </group>
 </menu>

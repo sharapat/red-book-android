@@ -10,13 +10,13 @@ public class AnimalsPresenter {
     private AnimalsView animalsView;
     private int type;
 
-    AnimalsPresenter(AnimalDao animalDao, AnimalsView animalsView, int type) {
+    AnimalsPresenter(AnimalDao animalDao, AnimalsView animalsView) {
         this.animalDao = animalDao;
         this.animalsView = animalsView;
-        this.type = type;
     }
 
-    public void getData() {
+    public void getData(int type) {
+        this.type = type;
         List<AnimalDbModel> models = animalDao.getAnimalsByType(type);
         animalsView.updateAdapter(models);
     }

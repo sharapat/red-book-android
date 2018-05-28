@@ -22,6 +22,7 @@ import java.util.List;
 
 public class AnimalsFragment extends Fragment implements AnimalsListItemClickListener, AnimalsView {
     public static final String TAG = "animalsFragment";
+    public static final String TYPE_ARGUMENT_KEY = "type";
 
     private AnimalsListAdapter adapter;
     private RecyclerView.LayoutManager manager;
@@ -32,8 +33,15 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
         super.onCreate(savedInstanceState);
         adapter = new AnimalsListAdapter(this);
         manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        animalsPresenter = new AnimalsPresenter(AnimalDatabase.getAnimalDatabase(getActivity()).animalDao(), this, MainActivity.INVERTEBRATES);
-        animalsPresenter.getData();
+        Bundle bundle = this.getArguments();
+        int type;
+        if (bundle != null) {
+            type = bundle.getInt(TYPE_ARGUMENT_KEY);
+        } else {
+            type = MainActivity.INVERTEBRATES;
+        }
+        animalsPresenter = new AnimalsPresenter(AnimalDatabase.getAnimalDatabase(getActivity()).animalDao(), this);
+        getData(type);
     }
 
     @Nullable
@@ -55,5 +63,9 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
     @Override
     public void updateAdapter(List<AnimalDbModel> models) {
         adapter.updateModel(models);
+    }
+
+    public void getData(int type) {
+        animalsPresenter.getData(type);
     }
 }

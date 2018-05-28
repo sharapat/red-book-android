@@ -16,13 +16,13 @@ public class AnimalDbModel {
     private int type;
 
     @ColumnInfo(name = "name_uz")
-    private String uzbName;
+    private String name_uz;
 
     @ColumnInfo(name = "name_eng")
-    private String engName;
+    private String name_eng;
 
     @ColumnInfo(name = "name_rus")
-    private String rusName;
+    private String name_rus;
 
     @ColumnInfo(name = "status")
     private String status;
@@ -72,28 +72,28 @@ public class AnimalDbModel {
         this.type = type;
     }
 
-    public String getUzbName() {
-        return uzbName;
+    public String getName_uz() {
+        return name_uz;
     }
 
-    public void setUzbName(String uzbName) {
-        this.uzbName = uzbName;
+    public void setName_uz(String name_uz) {
+        this.name_uz = name_uz;
     }
 
-    public String getEngName() {
-        return engName;
+    public String getName_eng() {
+        return name_eng;
     }
 
-    public void setEngName(String engName) {
-        this.engName = engName;
+    public void setName_eng(String name_eng) {
+        this.name_eng = name_eng;
     }
 
-    public String getRusName() {
-        return rusName;
+    public String getName_rus() {
+        return name_rus;
     }
 
-    public void setRusName(String rusName) {
-        this.rusName = rusName;
+    public void setName_rus(String name_rus) {
+        this.name_rus = name_rus;
     }
 
     public String getStatus() {
