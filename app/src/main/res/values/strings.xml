@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RedBook</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="invertebrates">Умуртқасизлар</string>
+    <string name="fishes">Балиқлар</string>
+    <string name="reptiles">Судралиб юрувчилар</string>
+    <string name="birds">Қушлар</string>
+    <string name="mammals">Сут эмизувчилар</string>
+    <string name="favorites">Танланганлар</string>
+    <string name="author">Муаллиф</string>
+    <string name="todo">TODO</string>
+</resources>
