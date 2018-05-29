@@ -11,8 +11,6 @@ import android.widget.TextView;
 import com.dasturlash.redbook.R;
 import com.dasturlash.redbook.models.AnimalDbModel;
 
-import java.util.List;
-
 class AnimalsViewHolder extends RecyclerView.ViewHolder {
     private ImageView image;
     private TextView titleUzb;

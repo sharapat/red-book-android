@@ -20,7 +20,6 @@ public class AnimalDetailActivity extends AppCompatActivity implements AnimalDet
 
     private AnimalDetailsPresenter presenter;
     private MenuItem menuItem;
-    private int animalId;
     private ImageView image;
     private TextView nameText;
     private TextView statusText;

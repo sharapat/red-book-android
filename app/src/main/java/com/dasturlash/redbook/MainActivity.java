@@ -23,7 +23,6 @@ import android.widget.SearchView;
 import com.dasturlash.redbook.animals.AnimalsFragment;
 import com.dasturlash.redbook.favorites.FavoritesFragment;
 
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity
                 FavoritesFragment favoritesFragment = (FavoritesFragment) getSupportFragmentManager().findFragmentByTag(FavoritesFragment.TAG);
                 if (animalsFragment != null && animalsFragment.isVisible()) {
                     animalsFragment.getData(animalsFragment.getType());
-                } else if(favoritesFragment != null && favoritesFragment.isVisible()) {
+                } else if (favoritesFragment != null && favoritesFragment.isVisible()) {
                     favoritesFragment.getFavorites();
                 }
                 return true;
@@ -115,7 +114,7 @@ public class MainActivity extends AppCompatActivity
             FavoritesFragment favoritesFragment = (FavoritesFragment) getSupportFragmentManager().findFragmentByTag(FavoritesFragment.TAG);
             if (animalsFragment != null && animalsFragment.isVisible()) {
                 animalsFragment.searchAnimalsByName(newText);
-            } else if(favoritesFragment != null && favoritesFragment.isVisible()) {
+            } else if (favoritesFragment != null && favoritesFragment.isVisible()) {
                 favoritesFragment.searchFavoritesByName(newText);
             } else {
                 return false;

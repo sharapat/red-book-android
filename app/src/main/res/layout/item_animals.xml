@@ -14,52 +14,50 @@
         android:id="@+id/item_image"
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        app:layout_constraintLeft_toLeftOf="@+id/item_animals_container"
-        app:layout_constraintTop_toTopOf="@+id/item_animals_container"
-        app:layout_constraintBottom_toBottomOf="@+id/item_animals_container"
+        android:layout_marginBottom="@dimen/vertical_padding_animal_list_item"
         android:contentDescription="@string/todo"
-        android:layout_marginBottom="@dimen/vertical_padding_animal_list_item"/>
+        app:layout_constraintBottom_toBottomOf="@+id/item_animals_container"
+        app:layout_constraintLeft_toLeftOf="@+id/item_animals_container"
+        app:layout_constraintTop_toTopOf="@+id/item_animals_container" />
 
     <TextView
         android:id="@+id/item_title_uz"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@+id/item_image"
-        app:layout_constraintRight_toRightOf="@+id/item_animals_container"
-        app:layout_constraintTop_toTopOf="@+id/item_animals_container"
-        android:layout_marginStart="@dimen/margin_start_list_item_title"
         android:layout_marginLeft="@dimen/margin_start_list_item_title"
-        android:textColor="@color/black"
-        android:textSize="@dimen/item_title_text_size"
+        android:layout_marginStart="@dimen/margin_start_list_item_title"
         android:singleLine="true"
         android:text="Salom"
-        app:layout_constraintBottom_toTopOf="@+id/item_title_ru"/>
+        android:textColor="@color/black"
+        android:textSize="@dimen/item_title_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/item_title_ru"
+        app:layout_constraintLeft_toRightOf="@+id/item_image"
+        app:layout_constraintRight_toRightOf="@+id/item_animals_container"
+        app:layout_constraintTop_toTopOf="@+id/item_animals_container" />
 
     <TextView
         android:id="@+id/item_title_ru"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@+id/item_image"
-        app:layout_constraintTop_toBottomOf="@+id/item_title_uz"
-        app:layout_constraintRight_toRightOf="@+id/item_animals_container"
-        android:layout_marginStart="@dimen/margin_start_list_item_title"
         android:layout_marginLeft="@dimen/margin_start_list_item_title"
+        android:layout_marginStart="@dimen/margin_start_list_item_title"
         android:singleLine="true"
-        app:layout_constraintBottom_toTopOf="@+id/item_title_en"
         android:text="salom"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/item_title_en"
+        app:layout_constraintLeft_toRightOf="@+id/item_image"
+        app:layout_constraintRight_toRightOf="@+id/item_animals_container"
+        app:layout_constraintTop_toBottomOf="@+id/item_title_uz" />
 
     <TextView
         android:id="@+id/item_title_en"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@+id/item_image"
-        app:layout_constraintTop_toBottomOf="@+id/item_title_ru"
-        app:layout_constraintRight_toRightOf="@+id/item_animals_container"
-        android:layout_marginStart="@dimen/margin_start_list_item_title"
         android:layout_marginLeft="@dimen/margin_start_list_item_title"
-        android:text="salom"
+        android:layout_marginStart="@dimen/margin_start_list_item_title"
         android:singleLine="true"
+        android:text="salom"
         app:layout_constraintBottom_toBottomOf="@+id/item_image"
-        />
+        app:layout_constraintLeft_toRightOf="@+id/item_image"
+        app:layout_constraintRight_toRightOf="@+id/item_animals_container"
+        app:layout_constraintTop_toBottomOf="@+id/item_title_ru" />
 </android.support.constraint.ConstraintLayout>

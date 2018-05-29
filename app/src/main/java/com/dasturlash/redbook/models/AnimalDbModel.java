@@ -4,8 +4,6 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-import com.dasturlash.redbook.MainActivity;
-import com.dasturlash.redbook.R;
 
 /**
  * Created by QAREKEN on 5/26/2018.

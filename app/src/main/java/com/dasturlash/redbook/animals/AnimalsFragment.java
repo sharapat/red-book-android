@@ -18,7 +18,6 @@ import com.dasturlash.redbook.R;
 import com.dasturlash.redbook.animals.list.AnimalsListAdapter;
 import com.dasturlash.redbook.animals.list.AnimalsListItemClickListener;
 import com.dasturlash.redbook.details.AnimalDetailActivity;
-import com.dasturlash.redbook.holder.AnimalHolder;
 import com.dasturlash.redbook.models.AnimalDbModel;
 import com.dasturlash.redbook.room.AnimalDatabase;
 
