@@ -21,7 +21,7 @@
             android:title="@string/mammals"/>
     </group>
 
-    <group android:id="@+id/menu_buttom" android:checkableBehavior="none">
+    <group android:id="@+id/menu_buttom">
         <item
             android:id="@+id/nav_favorites"
             android:title="@string/favorites" />

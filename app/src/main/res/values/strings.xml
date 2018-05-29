@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RedBook</string>
+    <string name="app_name">Қизил китоб</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -22,4 +22,8 @@
     <string name="limiting_factories"><b>Чекловчи омиллар:</b></string>
     <string name="increasing"><b>Кўпайтириш:</b></string>
     <string name="security"><b>Муҳофаза чоралари:</b></string>
+    <string name="empty_favorites_text">Танланганлар рўйҳати бўш</string>
+    <string name="uzbekistan_redbook">Узбекистон Республикаси қизил китоби</string>
+    <string name="search_title">Излаш</string>
+    <string name="not_found_message">бўйича натижа топилмади</string>
 </resources>

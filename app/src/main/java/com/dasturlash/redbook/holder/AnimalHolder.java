@@ -1,5 +1,6 @@
 package com.dasturlash.redbook.holder;
 
+import com.dasturlash.redbook.MainActivity;
 import com.dasturlash.redbook.models.AnimalDbModel;
 
 import java.util.List;
@@ -67,7 +68,20 @@ public class AnimalHolder {
         this.mammalsList = mammalsList;
     }
 
-    public void getAnimalsByType(int type) {
+    public List<AnimalDbModel> getAnimalsByType(int type) {
+        if (type == MainActivity.INVERTEBRATES) {
+            return invertebratesList;
+        } else if (type == MainActivity.FISHES) {
+            return fishesList;
+        } else if (type == MainActivity.REPTILES) {
+            return reptilesList;
+        } else if (type == MainActivity.BIRDS) {
+            return birdsList;
+        } else if (type == MainActivity.MAMMALS) {
+            return birdsList;
+        } else {
+            return null;
+        }
     }
 
     public static void setInstance(AnimalHolder instance) {
@@ -81,4 +95,5 @@ public class AnimalHolder {
     public void setAllAnimals(List<AnimalDbModel> allAnimals) {
         this.allAnimals = allAnimals;
     }
+
 }

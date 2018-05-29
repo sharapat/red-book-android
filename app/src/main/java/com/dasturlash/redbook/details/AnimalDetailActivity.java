@@ -16,6 +16,7 @@ import com.dasturlash.redbook.room.AnimalDatabase;
 
 public class AnimalDetailActivity extends AppCompatActivity implements AnimalDetailsView {
     public static final String ANIMAL_ID = "animalId";
+    public static final String FROM_FAVORITE = "fromFavorite";
 
     private AnimalDetailsPresenter presenter;
     private MenuItem menuItem;
@@ -30,6 +31,7 @@ public class AnimalDetailActivity extends AppCompatActivity implements AnimalDet
     private TextView limitingFactorsText;
     private TextView increaseText;
     private TextView securityText;
+    private boolean fromFavorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +49,16 @@ public class AnimalDetailActivity extends AppCompatActivity implements AnimalDet
         increaseText = findViewById(R.id.detail_increasing_content);
         securityText = findViewById(R.id.detail_security_content);
 
-
         Toolbar toolbar = findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle("");
+            actionBar.setTitle(R.string.app_name);
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+        fromFavorite = getIntent().getBooleanExtra(FROM_FAVORITE, false);
 
         AnimalDao animalDao = AnimalDatabase.getAnimalDatabase(this).animalDao();
         int animalId = getIntent().getIntExtra(ANIMAL_ID, 0);
@@ -74,11 +77,27 @@ public class AnimalDetailActivity extends AppCompatActivity implements AnimalDet
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        switch (id) {
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.menu_favourite:
+                presenter.toggleFavorite();
+                if (fromFavorite) {
+                    finish();
+                }
+                return true;
+            default:
+                return false;
+        }
     }
 
     @Override
     public void setAnimalDetail(AnimalDbModel model) {
+        String resName = "picture" + model.getId();
+        int imageId = getResources().getIdentifier(resName, "drawable", this.getPackageName());
+        image.setBackgroundResource(imageId);
         nameText.setText(model.getName_uz());
         statusText.setText(model.getStatus());
         propagationText.setText(model.getPropagation());

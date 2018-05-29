@@ -11,8 +11,10 @@
     <dimen name="vertical_padding_animal_list_item">16dp</dimen>
     <dimen name="item_title_text_size">16sp</dimen>
     <dimen name="detail_toolbar_height">56dp</dimen>
-    <dimen name="detial_name_text_size">24sp</dimen>
+    <dimen name="detail_name_text_size">32sp</dimen>
     <dimen name="detail_margin">16dp</dimen>
     <dimen name="detail_text_size">16sp</dimen>
-    <dimen name="detaild_sections_maring_top">8dp</dimen>
+    <dimen name="detail_sections_marin_top">8dp</dimen>
+    <dimen name="standard_text_size">16sp</dimen>
+    <dimen name="standard_margin">16dp</dimen>
 </resources>

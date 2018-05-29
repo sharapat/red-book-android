@@ -26,8 +26,11 @@ public interface AnimalDao {
     @Query("SELECT * FROM book WHERE id = :id")
     AnimalDbModel getAnimalById(int id);
 
-    @Query("SELECT * FROM book WHERE name_uz LIKE :name")
-    List<AnimalDbModel> getSuggestions(String name);
+    @Query("SELECT * FROM book WHERE type = :type AND name_uz LIKE :name")
+    List<AnimalDbModel> searchAnimalsByName(int type, String name);
+
+    @Query("SELECT * FROM book WHERE favorite = 1")
+    List<AnimalDbModel> getFavorites();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertToDB(List<AnimalDbModel> models);

@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.dasturlash.redbook.MainActivity;
 import com.dasturlash.redbook.R;
@@ -30,12 +31,28 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
     private AnimalsListAdapter adapter;
     private RecyclerView.LayoutManager manager;
     private AnimalsPresenter animalsPresenter;
+    private RecyclerView animalsList;
+    private TextView notFoundText;
+    private String searchText;
+    private int type;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adapter = new AnimalsListAdapter(this);
         manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        animalsPresenter = new AnimalsPresenter(this, AnimalDatabase.getAnimalDatabase(getActivity()).animalDao());
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_animals, container, false);
+        notFoundText = view.findViewById(R.id.not_found_message);
+        animalsList = view.findViewById(R.id.list_animals);
+        animalsList.setAdapter(adapter);
+        animalsList.setLayoutManager(manager);
+        animalsList.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
         Bundle bundle = this.getArguments();
         int type;
         if (bundle != null) {
@@ -43,18 +60,8 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
         } else {
             type = MainActivity.INVERTEBRATES;
         }
-        animalsPresenter = new AnimalsPresenter(AnimalDatabase.getAnimalDatabase(getActivity()).animalDao(), this);
+        this.type = type;
         getData(type);
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_animals, container, false);
-        RecyclerView animalsList = view.findViewById(R.id.list_animals);
-        animalsList.setAdapter(adapter);
-        animalsList.setLayoutManager(manager);
-        animalsList.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
         return view;
     }
 
@@ -65,12 +72,43 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
         startActivity(intent);
     }
 
+    public void searchAnimalsByName(String name) {
+        searchText = name;
+        animalsPresenter.searchAnimalsByName(name + "%");
+    }
+
     @Override
     public void updateAdapter(List<AnimalDbModel> models) {
         adapter.updateModel(models);
     }
 
+    @Override
+    public void hideAnimalsList() {
+        animalsList.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showAnimalsList() {
+        animalsList.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showAnimalsNotFoundMessage() {
+        String message = String.format("\"%s\" %s", searchText, getString(R.string.not_found_message));
+        notFoundText.setText(message);
+        notFoundText.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideAnimalsNotFoundMessage() {
+        notFoundText.setVisibility(View.GONE);
+    }
+
     public void getData(int type) {
         animalsPresenter.getData(type);
+    }
+
+    public int getType() {
+        return type;
     }
 }

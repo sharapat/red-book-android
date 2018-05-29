@@ -1,9 +1,6 @@
 package com.dasturlash.redbook.details;
 
-import android.util.Log;
-
 import com.dasturlash.redbook.R;
-import com.dasturlash.redbook.holder.AnimalHolder;
 import com.dasturlash.redbook.models.AnimalDbModel;
 import com.dasturlash.redbook.room.AnimalDao;
 
@@ -23,10 +20,20 @@ public class AnimalDetailsPresenter {
     }
 
     public void setFavoriteStatus() {
+        if (model == null) return;
         if (model.isFavorite()) {
             animalDetailsView.setFavoriteIcon(R.drawable.ic_bookmark_white_24dp);
         } else {
             animalDetailsView.setFavoriteIcon(R.drawable.ic_bookmark_border_black_24dp);
+        }
+    }
+
+    public void toggleFavorite() {
+        if (model != null) {
+            boolean isFavorite = !model.isFavorite();
+            model.setFavorite(isFavorite);
+            animalDao.update(model);
+            setFavoriteStatus();
         }
     }
 }
