@@ -25,7 +25,7 @@ public class AnimalsPresenter {
     }
 
     public void searchAnimalsByName(String name) {
-        List<AnimalDbModel> result = animalDao.searchAnimalsByName(type, name);
+        List<AnimalDbModel> result = animalDao.searchAnimalsByName(type, name + "%");
         if (result.isEmpty()) {
             animalsView.hideAnimalsList();
             animalsView.showAnimalsNotFoundMessage();

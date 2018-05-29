@@ -9,7 +9,7 @@ public class FavoritePresenter {
     private AnimalDao animalDao;
     private FavoritesView favoritesView;
 
-    public FavoritePresenter(AnimalDao animalDao, FavoritesView favoritesView) {
+    FavoritePresenter(AnimalDao animalDao, FavoritesView favoritesView) {
         this.animalDao = animalDao;
         this.favoritesView = favoritesView;
     }
@@ -17,10 +17,29 @@ public class FavoritePresenter {
     public void getFavorites() {
         List<AnimalDbModel> favorites = animalDao.getFavorites();
         if (favorites.isEmpty()) {
-            favoritesView.isFavoriteEmpty(true);
+            favoritesView.showEmptyMessage();
+            favoritesView.hideNotFoundMessage();
+            favoritesView.hideFavoritesList();
         } else {
-            favoritesView.isFavoriteEmpty(false);
+            favoritesView.hideNotFoundMessage();
+            favoritesView.hideEmptyMessage();
+            favoritesView.showFavoritesList();
             favoritesView.updateAdapter(favorites);
         }
     }
+
+    public void searchFavoritesByName(String name) {
+        List<AnimalDbModel> result = animalDao.searchFavoritesByName(name + "%");
+        if (result.isEmpty()) {
+            favoritesView.hideEmptyMessage();
+            favoritesView.hideFavoritesList();
+            favoritesView.showNotFoundMessage();
+        } else {
+            favoritesView.hideEmptyMessage();
+            favoritesView.hideNotFoundMessage();
+            favoritesView.showFavoritesList();
+            favoritesView.updateAdapter(result);
+        }
+    }
+
 }

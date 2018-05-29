@@ -74,7 +74,7 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
 
     public void searchAnimalsByName(String name) {
         searchText = name;
-        animalsPresenter.searchAnimalsByName(name + "%");
+        animalsPresenter.searchAnimalsByName(name);
     }
 
     @Override

@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity
             if (animalsFragment != null && animalsFragment.isVisible()) {
                 animalsFragment.searchAnimalsByName(newText);
             } else if(favoritesFragment != null && favoritesFragment.isVisible()) {
-                return false;
+                favoritesFragment.searchFavoritesByName(newText);
             } else {
                 return false;
             }

@@ -33,6 +33,8 @@ public class FavoritesFragment extends Fragment implements FavoriteListItemListe
     private FavoriteListAdapter adapter;
     private RecyclerView.LayoutManager manager;
     private TextView emptyText;
+    private TextView notFoundText;
+    private String searchText;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class FavoritesFragment extends Fragment implements FavoriteListItemListe
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favorite, container, false);
         emptyText = view.findViewById(R.id.empty_favorites);
+        notFoundText = view.findViewById(R.id.not_found_message);
         favoritesList = view.findViewById(R.id.list_favorites);
         favoritesList.setAdapter(adapter);
         favoritesList.setLayoutManager(manager);
@@ -57,19 +60,40 @@ public class FavoritesFragment extends Fragment implements FavoriteListItemListe
     }
 
     @Override
-    public void isFavoriteEmpty(boolean isEmpty) {
-        if (isEmpty) {
-            emptyText.setVisibility(View.VISIBLE);
-            favoritesList.setVisibility(View.GONE);
-        } else {
-            emptyText.setVisibility(View.GONE);
-            favoritesList.setVisibility(View.VISIBLE);
-        }
+    public void updateAdapter(List<AnimalDbModel> models) {
+        adapter.updateModel(models);
     }
 
     @Override
-    public void updateAdapter(List<AnimalDbModel> models) {
-        adapter.updateModel(models);
+    public void showEmptyMessage() {
+        emptyText.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideEmptyMessage() {
+        emptyText.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showNotFoundMessage() {
+        String message = String.format("\"%s\" %s", searchText, getString(R.string.not_found_message));
+        notFoundText.setText(message);
+        notFoundText.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideNotFoundMessage() {
+        notFoundText.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showFavoritesList() {
+        favoritesList.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideFavoritesList() {
+        favoritesList.setVisibility(View.GONE);
     }
 
     @Override
@@ -82,5 +106,10 @@ public class FavoritesFragment extends Fragment implements FavoriteListItemListe
 
     public void getFavorites() {
         presenter.getFavorites();
+    }
+
+    public void searchFavoritesByName(String name) {
+        searchText = name;
+        presenter.searchFavoritesByName(name);
     }
 }
