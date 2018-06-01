@@ -26,4 +26,12 @@
     <string name="uzbekistan_redbook">Узбекистон Республикаси қизил китоби</string>
     <string name="search_title">Излаш</string>
     <string name="not_found_message">бўйича натижа топилмади</string>
+    <string name="about">Дастур ҳақида</string>
+    <string name="ministry"><b>ЎЗБЕКИСТОН РЕСПУБЛИКАСИ АЛОҚА АХБОРАТЛАШТИРИШ ВА ТЕЛЕКОММУНИКАЦИЯ ТЕХНОЛОГИЯЛАРИ ДАВЛАТ ВАЗИРЛИГИ</b></string>
+    <string name="university"><b>МУҲАММАД АЛЬ-ХОРАЗМИЙ НОМИДАГИ ТОШКЕНТ АХБОРОТ ТЕХНОЛОГИЯЛАРИ УНИВЕРСИТЕТИ</b></string>
+    <string name="faculty">Компьютер Инжиниринг факультети 216-14 гуруҳ талабаси</string>
+    <string name="name">Толибжонов Жаҳонгирнинг</string>
+    <string name="app_theme_name">Android тизими учун \"Qizil kitob\" иловасини яратиш мавзусидаги битирув малакавий иши</string>
+    <string name="email">tuit21714@gmail.com</string>
+    <string name="tel_number">+998909459420</string>
 </resources>

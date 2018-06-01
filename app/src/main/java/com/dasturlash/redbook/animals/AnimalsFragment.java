@@ -1,6 +1,9 @@
 package com.dasturlash.redbook.animals;
 
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.dasturlash.redbook.MainActivity;
@@ -22,6 +26,7 @@ import com.dasturlash.redbook.models.AnimalDbModel;
 import com.dasturlash.redbook.room.AnimalDatabase;
 
 import java.util.List;
+import java.util.Objects;
 
 public class AnimalsFragment extends Fragment implements AnimalsListItemClickListener, AnimalsView {
     public static final String TAG = "animalsFragment";
@@ -30,6 +35,7 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
     private AnimalsListAdapter adapter;
     private RecyclerView.LayoutManager manager;
     private AnimalsPresenter animalsPresenter;
+    private View view;
     private RecyclerView animalsList;
     private TextView notFoundText;
     private String searchText;
@@ -46,7 +52,7 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_animals, container, false);
+        view = inflater.inflate(R.layout.fragment_animals, container, false);
         notFoundText = view.findViewById(R.id.not_found_message);
         animalsList = view.findViewById(R.id.list_animals);
         animalsList.setAdapter(adapter);
@@ -69,6 +75,14 @@ public class AnimalsFragment extends Fragment implements AnimalsListItemClickLis
         Intent intent = new Intent(getActivity(), AnimalDetailActivity.class);
         intent.putExtra(AnimalDetailActivity.ANIMAL_ID, id);
         startActivity(intent);
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    @Override
+    public void hideKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) Objects.requireNonNull(getActivity()).getSystemService(Activity.INPUT_METHOD_SERVICE);
+        assert inputMethodManager != null;
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     public void searchAnimalsByName(String name) {

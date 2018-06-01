@@ -27,6 +27,6 @@
             android:title="@string/favorites" />
         <item
             android:id="@+id/nav_author"
-            android:title="@string/author" />
+            android:title="@string/about" />
     </group>
 </menu>

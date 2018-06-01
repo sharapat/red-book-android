@@ -1,5 +1,7 @@
 package com.dasturlash.redbook.favorites;
 
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.dasturlash.redbook.R;
@@ -35,6 +38,7 @@ public class FavoritesFragment extends Fragment implements FavoriteListItemListe
     private TextView emptyText;
     private TextView notFoundText;
     private String searchText;
+    private View view;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,15 +52,20 @@ public class FavoritesFragment extends Fragment implements FavoriteListItemListe
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_favorite, container, false);
+        view = inflater.inflate(R.layout.fragment_favorite, container, false);
         emptyText = view.findViewById(R.id.empty_favorites);
         notFoundText = view.findViewById(R.id.not_found_message);
         favoritesList = view.findViewById(R.id.list_favorites);
         favoritesList.setAdapter(adapter);
         favoritesList.setLayoutManager(manager);
         favoritesList.addItemDecoration(new DividerItemDecoration(Objects.requireNonNull(getActivity()), DividerItemDecoration.VERTICAL));
-        getFavorites();
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        getFavorites();
     }
 
     @Override
@@ -102,6 +111,14 @@ public class FavoritesFragment extends Fragment implements FavoriteListItemListe
         intent.putExtra(AnimalDetailActivity.ANIMAL_ID, id);
         intent.putExtra(AnimalDetailActivity.FROM_FAVORITE, true);
         startActivity(intent);
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    @Override
+    public void hideKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) Objects.requireNonNull(getActivity()).getSystemService(Activity.INPUT_METHOD_SERVICE);
+        assert inputMethodManager != null;
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     public void getFavorites() {

@@ -23,8 +23,11 @@
             android:name=".MainActivity"
             android:launchMode="singleInstance"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".details.AnimalDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".details.AnimalDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".authors.AuthorsActivity"
+            android:label="@string/about"/>
     </application>
 
 </manifest>

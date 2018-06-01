@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.dasturlash.redbook.R;
 import com.dasturlash.redbook.models.AnimalDbModel;
 
@@ -34,8 +35,9 @@ class AnimalsViewHolder extends RecyclerView.ViewHolder {
         Integer resId = model.getId();
         String resName = "picture" + resId.toString();
         int imageId = context.getResources().getIdentifier(resName, "drawable", context.getPackageName());
-        Log.d("imageId", imageId + "");
-        image.setBackgroundResource(imageId);
+        Glide.with(context)
+                .load(imageId)
+                .into(image);
         titleUzb.setText(model.getName_uz());
         titleRus.setText(model.getName_rus());
         titleEng.setText(model.getName_eng());
@@ -44,6 +46,7 @@ class AnimalsViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View view) {
                 listener.onItemClick(model.getId());
+                listener.hideKeyboard();
             }
         });
     }

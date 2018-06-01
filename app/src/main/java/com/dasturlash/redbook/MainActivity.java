@@ -3,6 +3,7 @@ package com.dasturlash.redbook;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.SearchView;
 
 import com.dasturlash.redbook.animals.AnimalsFragment;
+import com.dasturlash.redbook.authors.AuthorsActivity;
 import com.dasturlash.redbook.favorites.FavoritesFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -150,7 +152,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_favorites) {
             changeFragment(new FavoritesFragment(), FavoritesFragment.TAG);
         } else if (id == R.id.nav_author) {
-
+            Intent intent = new Intent(this, AuthorsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
