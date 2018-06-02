@@ -23,7 +23,7 @@
     <string name="increasing"><b>Кўпайтириш:</b></string>
     <string name="security"><b>Муҳофаза чоралари:</b></string>
     <string name="empty_favorites_text">Танланганлар рўйҳати бўш</string>
-    <string name="uzbekistan_redbook">Узбекистон Республикаси қизил китоби</string>
+    <string name="uzbekistan_redbook">Ўзбекистон Республикаси қизил китоби</string>
     <string name="search_title">Излаш</string>
     <string name="not_found_message">бўйича натижа топилмади</string>
     <string name="about">Дастур ҳақида</string>
@@ -34,4 +34,7 @@
     <string name="app_theme_name">Android тизими учун \"Qizil kitob\" иловасини яратиш мавзусидаги битирув малакавий иши</string>
     <string name="email">tuit21714@gmail.com</string>
     <string name="tel_number">+998909459420</string>
+    <string name="red_book">(Red Book)</string>
+    <string name="support">Support</string>
+    <string name="qizil_kitob">Mobil qizil kitob v1.0.0</string>
 </resources>
