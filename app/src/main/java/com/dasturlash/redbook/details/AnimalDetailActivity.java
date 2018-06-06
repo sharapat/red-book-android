@@ -97,13 +97,13 @@ public class AnimalDetailActivity extends AppCompatActivity implements AnimalDet
         String resName = "picture" + model.getId();
         int imageId = getResources().getIdentifier(resName, "drawable", this.getPackageName());
         image.setBackgroundResource(imageId);
-        nameText.setText(model.getName_uz());
+        nameText.setText(model.getNameUzb());
         statusText.setText(model.getStatus());
         propagationText.setText(model.getPropagation());
-        habitatText.setText(model.getHabibat());
-        quantityText.setText(model.getNumerical());
+        habitatText.setText(model.getHabitat());
+        quantityText.setText(model.getQuantity());
         lifestyleText.setText(model.getLifestyle());
-        limitingFactorsText.setText(model.getLimiting());
+        limitingFactorsText.setText(model.getLimitingFactors());
         increaseText.setText(model.getBreeding());
         securityText.setText(model.getSecurity());
     }

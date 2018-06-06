@@ -1,14 +1,18 @@
 package com.dasturlash.redbook.animals.list;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.dasturlash.redbook.R;
 import com.dasturlash.redbook.models.AnimalDbModel;
 
@@ -37,10 +41,11 @@ class AnimalsViewHolder extends RecyclerView.ViewHolder {
         int imageId = context.getResources().getIdentifier(resName, "drawable", context.getPackageName());
         Glide.with(context)
                 .load(imageId)
+                .centerCrop()
                 .into(image);
-        titleUzb.setText(model.getName_uz());
-        titleRus.setText(model.getName_rus());
-        titleEng.setText(model.getName_eng());
+        titleUzb.setText(model.getNameUzb());
+        titleRus.setText(model.getNameRus());
+        titleEng.setText(model.getNameEng());
 
         constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override

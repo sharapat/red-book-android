@@ -4,16 +4,13 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
     <string name="invertebrates">Умуртқасизлар</string>
     <string name="fishes">Балиқлар</string>
     <string name="reptiles">Судралиб юрувчилар</string>
     <string name="birds">Қушлар</string>
     <string name="mammals">Сут эмизувчилар</string>
     <string name="favorites">Танланганлар</string>
-    <string name="author">Муаллиф</string>
     <string name="todo">TODO</string>
-    <string name="share">Улашиш</string>
     <string name="status"><b>Мақоми:</b></string>
     <string name="propagation"><b>Тарқалиши:</b></string>
     <string name="habitat"><b>Яшаш жойлари:</b></string>

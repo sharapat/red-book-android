@@ -78,7 +78,7 @@ public class AnimalHolder {
         } else if (type == MainActivity.BIRDS) {
             return birdsList;
         } else if (type == MainActivity.MAMMALS) {
-            return birdsList;
+            return mammalsList;
         } else {
             return null;
         }

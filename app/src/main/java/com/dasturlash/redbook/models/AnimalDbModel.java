@@ -16,14 +16,14 @@ public class AnimalDbModel {
     @ColumnInfo(name = "type")
     private int type;
 
-    @ColumnInfo(name = "name_uz")
-    private String name_uz;
+    @ColumnInfo(name = "nameUzb")
+    private String nameUzb;
 
-    @ColumnInfo(name = "name_eng")
-    private String name_eng;
+    @ColumnInfo(name = "nameEng")
+    private String nameEng;
 
-    @ColumnInfo(name = "name_rus")
-    private String name_rus;
+    @ColumnInfo(name = "nameRus")
+    private String nameRus;
 
     @ColumnInfo(name = "status")
     private String status;
@@ -31,17 +31,17 @@ public class AnimalDbModel {
     @ColumnInfo(name = "propagation")
     private String propagation;
 
-    @ColumnInfo(name = "habibat")
-    private String habibat;
+    @ColumnInfo(name = "habitat")
+    private String habitat;
 
-    @ColumnInfo(name = "numerical")
-    private String numerical;
+    @ColumnInfo(name = "quantity")
+    private String quantity;
 
     @ColumnInfo(name = "lifestyle")
     private String lifestyle;
 
-    @ColumnInfo(name = "limiting")
-    private String limiting;
+    @ColumnInfo(name = "limitingFactors")
+    private String limitingFactors;
 
     @ColumnInfo(name = "breeding")
     private String breeding;
@@ -52,12 +52,12 @@ public class AnimalDbModel {
     @ColumnInfo(name = "favorite")
     private boolean favorite;
 
-    public String getLimiting() {
-        return limiting;
+    public String getLimitingFactors() {
+        return limitingFactors;
     }
 
-    public void setLimiting(String limiting) {
-        this.limiting = limiting;
+    public void setLimitingFactors(String limitingFactors) {
+        this.limitingFactors = limitingFactors;
     }
 
     public boolean isFavorite() {
@@ -84,28 +84,28 @@ public class AnimalDbModel {
         this.type = type;
     }
 
-    public String getName_uz() {
-        return name_uz;
+    public String getNameUzb() {
+        return nameUzb;
     }
 
-    public void setName_uz(String name_uz) {
-        this.name_uz = name_uz;
+    public void setNameUzb(String nameUzb) {
+        this.nameUzb = nameUzb;
     }
 
-    public String getName_eng() {
-        return name_eng;
+    public String getNameEng() {
+        return nameEng;
     }
 
-    public void setName_eng(String name_eng) {
-        this.name_eng = name_eng;
+    public void setNameEng(String nameEng) {
+        this.nameEng = nameEng;
     }
 
-    public String getName_rus() {
-        return name_rus;
+    public String getNameRus() {
+        return nameRus;
     }
 
-    public void setName_rus(String name_rus) {
-        this.name_rus = name_rus;
+    public void setNameRus(String nameRus) {
+        this.nameRus = nameRus;
     }
 
     public String getStatus() {
@@ -124,20 +124,20 @@ public class AnimalDbModel {
         this.propagation = propagation;
     }
 
-    public String getHabibat() {
-        return habibat;
+    public String getHabitat() {
+        return habitat;
     }
 
-    public void setHabibat(String habibat) {
-        this.habibat = habibat;
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
     }
 
-    public String getNumerical() {
-        return numerical;
+    public String getQuantity() {
+        return quantity;
     }
 
-    public void setNumerical(String numerical) {
-        this.numerical = numerical;
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public String getLifestyle() {

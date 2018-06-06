@@ -3,7 +3,6 @@ package com.dasturlash.redbook.favorites.list;
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,9 +37,9 @@ public class FavoriteListViewHolder extends RecyclerView.ViewHolder {
         Glide.with(context)
                 .load(imageId)
                 .into(image);
-        titleUzb.setText(model.getName_uz());
-        titleRus.setText(model.getName_rus());
-        titleEng.setText(model.getName_eng());
+        titleUzb.setText(model.getNameUzb());
+        titleRus.setText(model.getNameRus());
+        titleEng.setText(model.getNameEng());
         constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
